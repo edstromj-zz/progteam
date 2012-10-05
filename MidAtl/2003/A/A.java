@@ -27,7 +27,7 @@ public class A
       if (numSolved[i] > numSolved[winner])
         winner = i;
       else if (numSolved[i] == numSolved[winner] &&
-               penaltyScores[i] < penaltyScores[winner])
+          penaltyScores[i] < penaltyScores[winner])
         winner = i;
     }
     System.out.println(teams[winner] + " " + numSolved[winner] + " " + penaltyScores[winner]);

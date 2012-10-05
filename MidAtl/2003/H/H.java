@@ -12,7 +12,7 @@ public class H {
 
       if (isOp(tok)) {
         Operation op = Operation.getByStr(tok);
-		//System.err.println("Operation: " + op.getStr());
+        //System.err.println("Operation: " + op.getStr());
         switch (op) {
           case EQUALS:
             if (vals.empty()) {
@@ -39,7 +39,7 @@ public class H {
               break;
             }
             vals.push(op.operate(first, second));
-			break;
+            break;
           case ADD:
           case SUBTRACT:
           case MULTIPLY:
@@ -48,11 +48,11 @@ public class H {
               break;
             }
             vals.push(op.operate(vals.pop(), vals.pop()));
-			break;
+            break;
         }
       }
       else {
-	  	//System.err.println(tok + " => " + fromRoman(tok));
+        //System.err.println(tok + " => " + fromRoman(tok));
         vals.push(fromRoman(tok));
       }
     }
@@ -90,10 +90,10 @@ outer_loop:
   }
   private enum Operation {
     ADD("+"),
-    SUBTRACT("-"),
-    MULTIPLY("*"),
-    DIVIDE("/"),
-    EQUALS("=");
+      SUBTRACT("-"),
+      MULTIPLY("*"),
+      DIVIDE("/"),
+      EQUALS("=");
     private String op;
     Operation(String oper) { op = oper; }
     String getStr() { return op; }
@@ -103,34 +103,34 @@ outer_loop:
           return oper;
       return EQUALS;
     }
-	int operate(int first, int second) {
-		switch(this) {
-			case ADD:
-				return second + first;
-			case SUBTRACT:
-				return second - first;
-			case MULTIPLY:
-				return second * first;
-			case DIVIDE:
-				return second / first;
-		}
-		return second + first;
-	}
+    int operate(int first, int second) {
+      switch(this) {
+        case ADD:
+          return second + first;
+        case SUBTRACT:
+          return second - first;
+        case MULTIPLY:
+          return second * first;
+        case DIVIDE:
+          return second / first;
+      }
+      return second + first;
+    }
   }
   private enum RomanNotation {
     M(1000, "M"),
-    CM(900, "CM"),
-    D(500, "D"),
-    CD(400, "CD"),
-    C(100,"C"),
-    XC(90,"XC"),
-    L(50,"L"),
-    XL(40,"XL"),
-    X(10,"X"),
-    IX(9,"IX"),
-    V(5,"V"),
-    IV(4,"IV"),
-    I(1,"I");
+      CM(900, "CM"),
+      D(500, "D"),
+      CD(400, "CD"),
+      C(100,"C"),
+      XC(90,"XC"),
+      L(50,"L"),
+      XL(40,"XL"),
+      X(10,"X"),
+      IX(9,"IX"),
+      V(5,"V"),
+      IV(4,"IV"),
+      I(1,"I");
 
     private int val;
     private String str;

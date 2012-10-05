@@ -59,7 +59,7 @@ public class E {
             lowest.add(c);
           }
         }
-        
+
         if (nHighest >= (ballots.size()+1)/2) {
           System.out.println(highest.iterator().next() + " won");
           break;
